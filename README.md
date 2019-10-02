@@ -1,4 +1,4 @@
-Package used:
+Tools used:
 `create-react-app`
 
 File edited:
