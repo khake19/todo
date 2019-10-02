@@ -14,13 +14,13 @@ const todosReducer = (state, action) => {
 }
 
 
-//need this unique id for deletion 
+//need this unique id for deletion
 const uniqueId = () => Math.random().toString(36).substr(2, 8)
 
 const TodoList = () => {
     const [todos, dispatch] = useReducer(todosReducer, []);
     const [item, setItem] = useState('')
-   
+
     const handleSubmit = (event) => {
         event.preventDefault()
         if(!item) return;
@@ -31,7 +31,7 @@ const TodoList = () => {
     return(
         <div>
             <ul>
-                { todos.map((todo) => ( 
+                { todos.map((todo) => (
                     <li key={todo.id}>{todo.item}
                         <button onClick={() => dispatch({type: 'REMOVE_TODO', id: todo.id})}>Remove Todo
                         </button>
